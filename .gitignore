@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+*.so
+
+# Environments
+.venv/
+venv/
+env/
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.tox/
+
+# Editors
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Local scan output
+*.sarif
+scan.json
+out.*.json
+*.jsonl
+!examples/*.jsonl
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!example.tfvars
+.terraform.lock.hcl
+
+# Scan output is sensitive: it maps where the weaknesses are
+results.sarif
+findings.json

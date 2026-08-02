@@ -1,0 +1,39 @@
+name: Propose a check
+description: Suggest a new AWS posture check
+labels: ["check", "enhancement"]
+body:
+  - type: input
+    id: rule_id
+    attributes:
+      label: Proposed rule id
+      placeholder: "s3.bucket-logging-disabled"
+    validations:
+      required: true
+  - type: dropdown
+    id: service
+    attributes:
+      label: Service
+      options: [iam, s3, cloudtrail, kms, other]
+    validations:
+      required: true
+  - type: textarea
+    id: consequence
+    attributes:
+      label: What goes wrong if this is misconfigured?
+      description: The consequence, not the configuration. This becomes the description.
+    validations:
+      required: true
+  - type: input
+    id: controls
+    attributes:
+      label: Control mappings
+      description: Must resolve against the basalt-aws catalog.
+      placeholder: "cis-aws:storage.bucket-encryption, nist-800-53-r5:SC-28"
+  - type: textarea
+    id: apis
+    attributes:
+      label: AWS APIs required
+      description: All must be read-only.
+      placeholder: "s3:GetBucketLogging"
+    validations:
+      required: true
