@@ -128,7 +128,7 @@ class AwsContext:
         """
         key = (service, region)
         if key not in self._clients:
-            self._clients[key] = self.session.client(  # type: ignore[call-overload]
+            self._clients[key] = self.session.client(
                 service, region_name=region, config=DEFAULT_BOTO_CONFIG
             )
         return self._clients[key]
