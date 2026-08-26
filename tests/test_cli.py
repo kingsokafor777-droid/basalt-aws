@@ -3,9 +3,9 @@ from __future__ import annotations
 import json
 
 import pytest
-from tests.conftest import REGION
 
 from basalt_aws.cli import REQUIRED_PERMISSIONS, main
+from tests.conftest import REGION
 
 
 class TestScanCommand:

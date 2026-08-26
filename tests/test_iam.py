@@ -3,7 +3,6 @@ from __future__ import annotations
 import json
 
 from basalt_core import Severity
-from tests.conftest import run_check
 
 from basalt_aws.checks.iam import (
     AccessKeyStale,
@@ -14,6 +13,7 @@ from basalt_aws.checks.iam import (
     UserMfaMissing,
     _grants_full_admin,
 )
+from tests.conftest import run_check
 
 ADMIN_DOC = {
     "Version": "2012-10-17",

@@ -3,7 +3,6 @@ from __future__ import annotations
 import json
 
 from basalt_core import Severity
-from tests.conftest import REGION, run_check, secure_bucket
 
 from basalt_aws.checks.s3 import (
     BlockPublicAccessDisabled,
@@ -15,6 +14,7 @@ from basalt_aws.checks.s3 import (
     _denies_insecure_transport,
     _policy_is_public,
 )
+from tests.conftest import REGION, run_check, secure_bucket
 
 PUBLIC_POLICY = {
     "Version": "2012-10-17",

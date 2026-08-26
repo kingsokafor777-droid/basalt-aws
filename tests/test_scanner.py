@@ -19,10 +19,10 @@ from basalt_core import (
     load_catalog,
 )
 from basalt_core.plugin import ENTRY_POINT_GROUP, discover_scanners
-from tests.conftest import REGION, secure_bucket
 
 from basalt_aws import CHECKS, AwsScanner, Scope, get_check
 from basalt_aws.registry import Check, checks_for_service, register
+from tests.conftest import REGION, secure_bucket
 
 
 class TestRegistry:

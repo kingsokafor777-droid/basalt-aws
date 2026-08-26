@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from basalt_core import Severity
-from tests.conftest import REGION, run_check
 
 from basalt_aws.checks.cloudtrail import (
     NoTrailConfigured,
@@ -10,6 +9,7 @@ from basalt_aws.checks.cloudtrail import (
     TrailValidationDisabled,
 )
 from basalt_aws.checks.kms import KeyRotationDisabled
+from tests.conftest import REGION, run_check
 
 
 def _trail_bucket(s3, name="basalt-trail-logs"):
