@@ -8,7 +8,7 @@ testable by handing it a context, and gives one place to set the retry policy.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Any, cast
 
 import boto3
 from botocore.config import Config
@@ -128,7 +128,8 @@ class AwsContext:
         """
         key = (service, region)
         if key not in self._clients:
-            self._clients[key] = self.session.client(
+            dynamic_session = cast(Any, self.session)
+            self._clients[key] = dynamic_session.client(
                 service, region_name=region, config=DEFAULT_BOTO_CONFIG
             )
         return self._clients[key]
